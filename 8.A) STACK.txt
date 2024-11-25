@@ -1,0 +1,33 @@
+def create_stack():
+    stack=[]
+    return stack
+
+def check_empty(stack):
+    return len(stack)==0
+
+def push(stack,item):
+    stack.append(item)
+    print("pushed item=",item)
+
+def pop(stack):
+    if (check_empty(stack)):
+        return "stack is emty"
+    return stack.pop()
+
+def selectOption(ch):
+    if ch==1:
+        x=int(input("enter value for push"))
+        push(stack,str(x))
+    else:
+        print("popped item" +pop(stack))
+
+stack=create_stack()
+ch=0
+while(ch<3):
+    print("1.push")
+    print("2.pop")
+    print("3.exit")
+    ch=int(input("enter your choice="))
+    selectOption(ch)
+    print("stack after popping element=" +str(stack))
+print()
